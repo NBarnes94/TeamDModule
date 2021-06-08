@@ -1,11 +1,10 @@
-import logo from './logo.svg';
 import './App.css';
+import LatLon from './location/LatLon'
 
 function App() {
   return (
-    <div className="App">
-      <h1>We here 
-      </h1>
+    <div className="location">
+      <LatLon />
     </div>
   );
 }
