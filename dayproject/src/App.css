@@ -1,5 +1,6 @@
-.App {
-  text-align: center;
+body{
+  background-color: #557a74;
+background-image: url("https://www.transparenttextures.com/patterns/cardboard-flat.png");
 }
 
 /* .searchFunction{
@@ -8,22 +9,25 @@
 } */
 .mainDiv{
   display: flex;
-  justify-content: right;
+  /* justify-content: right; */
+  /* flex-direction: column; */
   margin: auto;
-  width: 30%;
+  width: 160px;
   padding: 5px;
-  margin-left: 20%;
-  margin-right: 2%;
-  margin-top: 2%;
+  margin-left: 2px;
+  margin-right: 2px;
+  margin-top: 200px;
   float: right;
 }
 
 .formDiv {
   display: flex;
   align-items: center;
-  justify-content: space-evenly;
-  padding-right: 40%;
-  margin-top: 2%;
+  justify-content: space-between;
+  /* padding-right: 40%;
+  margin-top: 2%; */
+  padding-right: 30px;
+  padding-left: 30px;
 }
 
 .pConatainer {
@@ -35,6 +39,28 @@
   border-radius: 50%;
   width: 50%;
   height: 50%;
-  padding-top: 0%;
-  margin-left: 2%;
+  margin-top: 10px;
+  margin-left: 0;
+  float: left;
+  border: solid black 7px;
+  transform: scale(0.7);
 }
+#tempType{
+  display: flex;
+  justify-content: space-around;
+  width: 120px;
+}
+.submit{
+  width: 300px;
+}
+
+.div{
+  margin-top: 60px;
+  margin-right: 5px;
+  margin-left: 0;
+  margin-bottom: 0px;
+}
+/* .display{
+  display: flex;
+  flex-direction: column;
+} */
