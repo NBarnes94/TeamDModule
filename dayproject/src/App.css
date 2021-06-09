@@ -1,5 +1,6 @@
-.App {
-  text-align: center;
+body{
+  background-color: #557a74;
+background-image: url("https://www.transparenttextures.com/patterns/cardboard-flat.png");
 }
 
 /* .searchFunction{
@@ -7,15 +8,17 @@
   row
 } */
 .mainDiv{
-  display: flex;
-  justify-content: right;
+  display: inline-block;
+  /* justify-content: right; */
+  /* flex-direction: row; */
   margin: auto;
-  width: 30%;
+  width: 150px;
   padding: 5px;
-  margin-left: 20%;
-  margin-right: 2%;
+  margin-left: 0;
+  margin-right: 0;
   margin-top: 2%;
   float: right;
+  overflow-y: scroll;
 }
 
 .formDiv {
@@ -37,4 +40,9 @@
   height: 50%;
   padding-top: 0%;
   margin-left: 2%;
+  float: left;
+}
+.div{
+  /* display: flex;
+  flex-wrap: wrap; */
 }

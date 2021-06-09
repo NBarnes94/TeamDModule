@@ -18,7 +18,7 @@ const LatLon = (props) => {
 
         fetch(url)
             .then(res => res.json())
-            .then(data => setTmResults(data._embedded.events))
+            .then(data => setTmResults(data._embedded.events.slice(0,5)))
             .catch(err => console.log(err));
             // console.log(data);
     };
@@ -70,16 +70,15 @@ const LatLon = (props) => {
                 <Button className='submit'>What is happening here?</Button>
             </Form>
             {
-                <h3>{wresults}</h3>
+                <h3 className='div'>{wresults}</h3>
             }
             {
-                tmresults.length >0? <Tm results={tmresults}/> : null
+                //tmresults.length >0? 
+                <Tm results={tmresults}/> 
+                //: null
             }
             {
-                // <FetchNasa results={imageUrl} />
-                // <div class="row">
-                <img id="photo" className="mainDiv row col" src={imageUrl} alt="Location"></img>
-                // </div>
+                <img className="div" id="photo" className="mainDiv row col" src={imageUrl} alt="Location"></img>
             }
             </div>
     )
