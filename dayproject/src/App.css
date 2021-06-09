@@ -10,6 +10,31 @@
   display: flex;
   justify-content: right;
   margin: auto;
-  width: 40%;
+  width: 30%;
   padding: 5px;
+  margin-left: 20%;
+  margin-right: 2%;
+  margin-top: 2%;
+  float: right;
+}
+
+.formDiv {
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  padding-right: 40%;
+  margin-top: 2%;
+}
+
+.pConatainer {
+  float: left;
+  margin-top: 5%;
+}
+
+#photo {
+  border-radius: 50%;
+  width: 50%;
+  height: 50%;
+  padding-top: 0%;
+  margin-left: 2%;
 }
