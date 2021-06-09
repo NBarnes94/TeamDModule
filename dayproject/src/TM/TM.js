@@ -13,7 +13,7 @@ const TM = (props) =>{
                             <br />
                             Start date(y/m/d) : {events.dates.start.localDate}
                         </p>
-                        <a href={events.url}>Get Tickets</a>
+                        <a href={events.url}>Get Ticket</a>
                     </div>
                 )
             }
