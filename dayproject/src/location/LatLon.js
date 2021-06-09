@@ -11,6 +11,7 @@ const LatLon = (props) => {
     const [longitude, setLongitude] = useState('')
     const [tmresults, setTmResults] = useState([]);
     const [imageUrl, setImageUrl] = useState('');
+    const [ wresults, setwResults ] = useState ([])
 
     const fetchTMResults = () => {
         let url = `https://app.ticketmaster.com/discovery/v2/events?apikey=eDb4BQQtXjPJwP2mdVa6eLtiQBnqU0Os&latlong=${latitude},${longitude}&locale=*`;
@@ -31,11 +32,28 @@ const LatLon = (props) => {
         .then(json => setImageUrl(json.url))
         .catch(err => console.log(err))
     };
+        
+    const fetchTemp = () => {
+        
+            // if (toggleF === true){
+                let url = `https://api.openweathermap.org/data/2.5/weather?lat=${latitude}&lon=${longitude}&units=imperial&appid=ef95820d99075603502e768fc43ff866`
+            // }else
+            //     (toggleC === true) {
+            //         let url = `https://api.openweathermap.org/data/2.5/weather?lat=${latitude}&lon=${longitude}&units=metric&appid=ef95820d99075603502e768fc43ff866`
+            // }  
+        
+            fetch(url)
+            .then(res => res.json())
+            .then(data => setwResults(data.main.temp))
+            .catch(err => console.log(err)); 
+        
+        };
 
     const handleSubmit = (event) => {
         event.preventDefault();
         fetchTMResults();
         fetchNasaResults();
+        fetchTemp();
     };
 
     return (
@@ -51,6 +69,9 @@ const LatLon = (props) => {
                 </FormGroup>
                 <Button className='submit'>What is happening here?</Button>
             </Form>
+            {
+                <h3>{wresults}</h3>
+            }
             {
                 tmresults.length >0? <Tm results={tmresults}/> : null
             }

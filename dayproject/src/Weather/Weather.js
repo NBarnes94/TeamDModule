@@ -14,13 +14,13 @@ const [ wresults, setwResults ] = useState ([])
 
 const fetchTemp = () => {
 
-    if (toggleF === true){
+    // if (toggleF === true){
         let url = `https://api.openweathermap.org/data/2.5/weather?lat=${latitude}&lon=${longitude}&units=imperial&appid=ef95820d99075603502e768fc43ff866`
-    }else
-        (toggleC === true) {
-            let url = `https://api.openweathermap.org/data/2.5/weather?lat=${latitude}&lon=${longitude}&units=metric&appid=ef95820d99075603502e768fc43ff866`
-    }  
-   /* let url = `https://api.openweathermap.org/data/2.5/onecall?lat=86&lon=33&units=imperial&exclude=minutely,hourly,daily,alerts&appid=ef95820d99075603502e768fc43ff866`;*/
+    // }else{
+    //     (toggleC === true) {
+    //         let url = `https://api.openweathermap.org/data/2.5/weather?lat=${latitude}&lon=${longitude}&units=metric&appid=ef95820d99075603502e768fc43ff866`}
+    // }  
+    /* let url = `https://api.openweathermap.org/data/2.5/onecall?lat=86&lon=33&units=imperial&exclude=minutely,hourly,daily,alerts&appid=ef95820d99075603502e768fc43ff866`;*/
 
     fetch(url)
     .then(res => res.json())
