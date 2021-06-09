@@ -1,10 +1,12 @@
 import './App.css';
-import LatLon from './location/LatLon'
+//import LatLon from './location/LatLon';
+import WeatherResults from './Weather/Weather'
 
 function App() {
   return (
     <div className="location">
-      <LatLon />
+    
+    <WeatherResults />
     </div>
   );
 }

@@ -1,6 +1,6 @@
 import React from 'react';
 import {Input,FormGroup, Label, Form, Button} from 'reactstrap';
-
+import WeatherResults from 'weatherresults';
 
 
 const LatLon = (props) =>{
@@ -16,6 +16,7 @@ const LatLon = (props) =>{
             </FormGroup>
             <Button>What is happening here?</Button>
         </Form>
+         
     )
 }
 
