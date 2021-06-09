@@ -6,7 +6,7 @@ const TM = (props) =>{
         <div>
             {props.results.map(events => {
                 return(
-                    <div className="mainDiv div" >
+                    <div className="mainDiv" >
                         <div id='TmResult'>
                         <h3>{events.name}</h3>
                         <p>

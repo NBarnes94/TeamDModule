@@ -90,8 +90,8 @@ const LatLon = (props) => {
                     <Input type='text' name='longitude' onChange={(e) => setLongitude(e.target.value)} required />
                 </FormGroup>
             
-                <Label htmlFor="submit">(F) (C)</Label>
-                        <Input type="select" name="definition" value={
+                <Label htmlFor="submit" ><h1 className='div'>Current temperature: {wresults}°</h1></Label>
+                        <Input id="tempType" type="select" name="definition" value={
                             
                             
                             toggle} onChange={(e) => setToggle(e.target.value)}>
@@ -100,19 +100,22 @@ const LatLon = (props) => {
                             <option value="C">Celsius</option>
                         </Input>
 
-                <Button className='submit'>What is happening here?</Button>
+                <Button className='submit'>Show me local details</Button>
+                
             </Form>
+            <div className='display'>
+            {/* {
+                
+            } */}
             {
-                <h3 className='div'>{wresults}</h3>
-            }
-            {
-                //tmresults.length >0? 
+                tmresults.length >0? 
                 <Tm results={tmresults}/> 
-                //: null
+                : null
             }
             {
-                <img className="div" id="photo" className="mainDiv row col" src={imageUrl} alt="Location"></img>
+                imageUrl ? <img className="div" id="photo" className="mainDiv row col" src={imageUrl} alt="Location"></img> : null
             }
+            </div>
             </div>
     )
 }
