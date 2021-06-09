@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { Input, FormGroup, Label, Form, Button } from 'reactstrap';
 import Tm from '../TM/TM';
+// import FetchNasa from '../Nasa/Nasa';
 
 
 
@@ -9,7 +10,7 @@ const LatLon = (props) => {
     const [latitude, setLatitude] = useState('');
     const [longitude, setLongitude] = useState('')
     const [tmresults, setTmResults] = useState([]);
-
+    const [imageUrl, setImageUrl] = useState('');
 
     const fetchTMResults = () => {
         let url = `https://app.ticketmaster.com/discovery/v2/events?apikey=eDb4BQQtXjPJwP2mdVa6eLtiQBnqU0Os&latlong=${latitude},${longitude}&locale=*`;
@@ -21,9 +22,20 @@ const LatLon = (props) => {
             // console.log(data);
     };
 
+    const fetchNasaResults = () =>{
+        const key='GoQCbRk7g8Y58M14bxLYOvKbEefbe2d6DcqvI9u9';
+        const url = `https://api.nasa.gov/planetary/earth/assets?lon=${longitude}&lat=${latitude}&api_key=${key}`;
+        
+        fetch(url)
+        .then(response => response.json())
+        .then(json => setImageUrl(json.url))
+        .catch(err => console.log(err))
+    };
+
     const handleSubmit = (event) => {
         event.preventDefault();
         fetchTMResults();
+        fetchNasaResults();
     };
 
     return (
@@ -41,6 +53,10 @@ const LatLon = (props) => {
             </Form>
             {
                 tmresults.length >0? <Tm results={tmresults}/> : null
+            }
+            {
+                // <FetchNasa results={imageUrl} />
+                <img id="photo" src={imageUrl} alt="Location"></img>
             }
         </div>
     )

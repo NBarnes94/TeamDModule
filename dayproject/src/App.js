@@ -6,7 +6,7 @@ function App() {
   return (
     <div className="location">
       <LatLon />
-      <FetchNasa />
+      {/* <FetchNasa /> */}
     </div>
   );
 }
