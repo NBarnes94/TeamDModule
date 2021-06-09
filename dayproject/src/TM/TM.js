@@ -6,14 +6,16 @@ const TM = (props) =>{
         <div>
             {props.results.map(events => {
                 return(
-                    <div className='mainDiv'>
+                    <div className="mainDiv" >
+                        <div id='TmResult'>
                         <h3>{events.name}</h3>
                         <p>
                             Distance from you: {events.distance}
                             <br />
                             Start date(y/m/d) : {events.dates.start.localDate}
                         </p>
-                        <a href={events.url}>Get Tickets</a>
+                        <a href={events.url}>Get Ticket</a>
+                    </div>
                     </div>
                 )
             }
