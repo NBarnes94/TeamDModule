@@ -40,7 +40,7 @@ const LatLon = (props) => {
 
     return (
         <div className='searchFunction'>
-            <Form onSubmit={(e) => handleSubmit(e)}>
+            <Form className="formDiv" onSubmit={(e) => handleSubmit(e)}>
                 <FormGroup>
                     <Label>Latitude</Label>
                     <Input type='text' name="latitude" onChange={(e) => setLatitude(e.target.value)} required />
@@ -56,9 +56,11 @@ const LatLon = (props) => {
             }
             {
                 // <FetchNasa results={imageUrl} />
-                <img id="photo" src={imageUrl} alt="Location"></img>
+                // <div class="row">
+                <img id="photo" className="mainDiv row col" src={imageUrl} alt="Location"></img>
+                // </div>
             }
-        </div>
+            </div>
     )
 }
 
