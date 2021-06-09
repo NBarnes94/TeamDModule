@@ -1,0 +1,15 @@
+.App {
+  text-align: center;
+}
+
+/* .searchFunction{
+  display: flex;
+  row
+} */
+.mainDiv{
+  display: flex;
+  justify-content: right;
+  margin: auto;
+  width: 40%;
+  padding: 5px;
+}
