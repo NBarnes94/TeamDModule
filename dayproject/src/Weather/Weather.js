@@ -16,17 +16,12 @@ const fetchTemp = () => {
 
     if (toggleF === true){
         let url = `https://api.openweathermap.org/data/2.5/weather?lat=${latitude}&lon=${longitude}&units=imperial&appid=ef95820d99075603502e768fc43ff866`
-    }else{
-        let url = `https://api.openweathermap.org/data/2.5/weather?lat=${latitude}&lon=${longitude}&units=metric&appid=ef95820d99075603502e768fc43ff866`
-    }
-     
-
-    
+    }else
+        (toggleC === true) {
+            let url = `https://api.openweathermap.org/data/2.5/weather?lat=${latitude}&lon=${longitude}&units=metric&appid=ef95820d99075603502e768fc43ff866`
+    }  
    /* let url = `https://api.openweathermap.org/data/2.5/onecall?lat=86&lon=33&units=imperial&exclude=minutely,hourly,daily,alerts&appid=ef95820d99075603502e768fc43ff866`;*/
-  /*page=${pageNumber}&q=${search}`;
-    url = startDate ? url + `&begin_date=${startDate}`  : url;
-    url = endDate ? url + `&end_date=${endDate}`  : url;)
-*/
+
     fetch(url)
     .then(res => res.json())
     .then(data => setwResults(data.main.temp))
